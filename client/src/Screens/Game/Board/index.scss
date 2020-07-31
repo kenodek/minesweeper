@@ -1,0 +1,15 @@
+#container-board{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#board{
+    border: 1px solid rgba(200,200,200,0.4);
+    display: flex;
+    flex-wrap: wrap;
+}
+
