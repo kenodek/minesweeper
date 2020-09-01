@@ -3,9 +3,11 @@ import "./index.scss";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/User/creators";
 import { Link } from "react-router-dom";
+import { useTypedSelector } from "../../redux/store";
 
 const Register = () => {
   const dispatch = useDispatch();
+  const registerError = useTypedSelector((state) => state.user.registerError);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -50,7 +52,9 @@ const Register = () => {
             />
           </label>
 
-          <button className="button-submit">Register</button>
+          {registerError && <span id="register-error">{registerError}</span>}
+
+          <button className="button-submit-register">Register</button>
         </fieldset>
 
         <Link to="/" id="login-link">

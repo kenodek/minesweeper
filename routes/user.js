@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const auth = require("../middleware/auth");
-const { update } = require("../models/User");
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -39,17 +38,16 @@ router.post("/register", async (req, res) => {
       throw Error("Passwords do not match");
 
     if (await User.findOne({ email }))
-      return res.status(401).json({ errors: ["Email already taken"] });
+      return res.status(401).json({ error: "Email already taken" });
 
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
-    console.log("TYPEOF HASH: ", typeof hash);
 
     await new User({ email, hash }).save();
 
     res.status(200).json({ success: true });
   } catch ({ message }) {
-    console.log("ERROR: ", err);
+    console.log("ERROR: ", message);
     res.status(500).json({ error: message, success: false });
   }
 });
