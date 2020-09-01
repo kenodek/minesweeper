@@ -13,6 +13,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.26.10",
     "uuid": "^8.3.0"
   },
   "scripts": {
@@ -45,7 +46,6 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "24.9.0",
-    "node-sass": "^4.14.1",
     "typescript": "^3.9.7"
   }
 }
