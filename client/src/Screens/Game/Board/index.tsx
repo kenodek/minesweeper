@@ -4,7 +4,12 @@ import Cell from "../Cell";
 import { useTypedSelector } from "../../../redux/store";
 import { generateCells, ICell } from "./functions";
 
-function Board() {
+interface Props {
+  isGameReseted: boolean;
+  setIsGameReseted: Function;
+}
+
+function Board({ isGameReseted, setIsGameReseted }: Props) {
   const boardWidth = useTypedSelector((state) => state.board.width);
   const boardHeight = useTypedSelector((state) => state.board.height);
   const numberOfBombs = useTypedSelector((state) => state.board.numberOfBombs);
@@ -13,6 +18,13 @@ function Board() {
     generateCells(numberOfBombs, boardHeight, boardWidth)
   );
   const [isGameOver, setGameOver] = useState(false);
+
+  useEffect(() => {
+    if (isGameReseted) {
+      setCells(generateCells(numberOfBombs, boardHeight, boardWidth));
+      setIsGameReseted(false);
+    }
+  }, [isGameReseted]);
 
   useEffect(() => {
     setCells(generateCells(numberOfBombs, boardHeight, boardWidth));

@@ -9,7 +9,11 @@ import {
   changeBoardSettings,
 } from "../../../redux/BoardSettings/creators";
 
-const Menu = () => {
+interface Props {
+  setIsGameReseted: Function;
+}
+
+const Menu = ({ setIsGameReseted }: Props) => {
   const dispatch = useDispatch();
 
   const isFetching = useTypedSelector((state) => state.board.isFetching);
@@ -33,10 +37,6 @@ const Menu = () => {
     width: isMenuOpened ? "400px" : "80px",
   };
 
-  useEffect(() => {
-    console.log("IS MENU OPENED: ", isMenuOpened);
-  }, [isMenuOpened]);
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
@@ -55,6 +55,12 @@ const Menu = () => {
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
         </button>
+
+        {isMenuOpened && (
+          <button id="button-reset" onClick={() => setIsGameReseted(true)}>
+            Reset
+          </button>
+        )}
       </div>
 
       {isMenuOpened && (

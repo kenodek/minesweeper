@@ -8,11 +8,25 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 20px 20px;
   border-bottom: 1px dashed rgba(200, 200, 200, 0.4);
+}
+
+#button-reset {
+  width: auto;
+  height: auto;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(200, 200, 200, 0.4);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 .container-connect {
