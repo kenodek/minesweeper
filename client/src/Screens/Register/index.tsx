@@ -48,7 +48,7 @@ const Register = () => {
 
           {registerError && <span className="form-error">{registerError}</span>}
 
-          <button className="auto flex-center">Register</button>
+          <button className="size-auto flex-center">Register</button>
         </fieldset>
 
         <Link to="/" className="form-link">

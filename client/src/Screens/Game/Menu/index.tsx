@@ -45,19 +45,22 @@ const Menu = ({ setIsGameReseted }: Props) => {
   };
 
   return (
-    <div className="menu-container" style={menuStyles}>
-      <div id="section-menu-container">
+    <div className="sidebar" style={menuStyles}>
+      <div className="container-space-between">
         <button
-          className="hamburger-button"
+          className="hamburger"
           onClick={() => setMenuState((prevState) => !prevState)}
         >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
+          <span className="hamburger__line"></span>
         </button>
 
         {isMenuOpened && (
-          <button id="button-reset" onClick={() => setIsGameReseted(true)}>
+          <button
+            className="button-reset flex-center auto"
+            onClick={() => setIsGameReseted(true)}
+          >
             Reset
           </button>
         )}
@@ -65,8 +68,8 @@ const Menu = ({ setIsGameReseted }: Props) => {
 
       {isMenuOpened && (
         <>
-          <form id="section-menu-container" onSubmit={handleSubmit}>
-            <div className="container-connect">
+          <form className="container-space-between" onSubmit={handleSubmit}>
+            <div className="size-auto">
               <label className="board-size-label" htmlFor="input-board-width">
                 WIDTH
               </label>
@@ -84,7 +87,7 @@ const Menu = ({ setIsGameReseted }: Props) => {
               />
             </div>
 
-            <div className="container-connect">
+            <div className="size-auto">
               <label className="board-size-label">HEIGHT</label>
               <input
                 type="number"
@@ -99,7 +102,7 @@ const Menu = ({ setIsGameReseted }: Props) => {
               />
             </div>
 
-            <div className="container-connect">
+            <div className="size-auto">
               <label className="number-of-bombs-label">NUMBER OF BOMBS</label>
               <input
                 type="number"

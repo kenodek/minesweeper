@@ -20,32 +20,30 @@ const Login = () => {
           dispatch(login(email, password));
         }}
       >
-        <fieldset id="login-fieldset">
-          <legend id="login-legend"> Minesweeper</legend>
-          <label className="login-label">
+        <fieldset>
+          <legend> Minesweeper</legend>
+          <label>
             Email
             <input
               type="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="login-input"
             />
           </label>
 
-          <label className="login-label">
+          <label>
             Password
             <input
               type="password"
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="login-input"
             />
           </label>
           {loginError && <span className="form-error">{loginError}</span>}
 
-          <button className="auto flex-center">Login</button>
+          <button className="size-auto flex-center">Login</button>
         </fieldset>
 
         <Link to="/register" className="form-link">
