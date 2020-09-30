@@ -30,6 +30,41 @@
   }
 }
 
+.container-settings {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+
+  label {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    display: block;
+
+    &:not(:first-child) {
+      padding-left: 100px;
+    }
+  }
+
+  input {
+    display: block;
+    width: auto;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    padding: 5px 3px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
 .container-space-between {
   width: 100%;
   height: auto;

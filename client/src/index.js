@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store.ts";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import PrivateRoute from "./global_components/PrivateRoute";
-import history from "./global_components/history";
+import history from "./global_components/History/index.ts";
 import Register from "./Screens/Register";
 import { IconContext } from "react-icons";
 
