@@ -1,7 +1,33 @@
+@use "../../../global_styles/colors";
+
 .sidebar {
   height: 100vh;
-  border-left: 1px solid rgba(200, 200, 200, 0.2);
-  transition: width 0.5s;
+  border-left: 1px solid colors.$light-gray;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-icon {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-bottom: 1px solid colors.$light-gray;
+
+  button {
+    width: auto;
+    height: auto;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
 }
 
 .container-space-between {
@@ -12,13 +38,13 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 20px 20px;
-  border-bottom: 1px dashed rgba(200, 200, 200, 0.4);
+  border-bottom: 1px dashed colors.$light-gray;
 }
 
 .button-reset {
   padding: 8px 18px;
   background: transparent;
-  border: 1px solid rgba(200, 200, 200, 0.4);
+  border: 1px solid colors.$light-gray;
   outline: none;
   border-radius: 100px;
   cursor: pointer;
@@ -29,8 +55,8 @@
   height: auto;
   padding: 5px 3px;
   border-radius: 2px;
-  border: 1px solid rgba(200, 200, 200, 0.4);
-  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid colors.$light-gray;
+  background-color: transparent;
   color: white;
   outline: none;
   display: block;
@@ -54,7 +80,7 @@
   height: auto;
   padding: 5px 3px;
   border-radius: 2px;
-  border: 1px solid rgba(200, 200, 200, 0.4);
+  border: 1px solid colors.$light-gray;
   background-color: rgba(0, 0, 0, 0);
   color: white;
   outline: none;
@@ -101,4 +127,8 @@
   margin-left: auto;
   margin-top: 30px;
   cursor: pointer;
+}
+
+.icon {
+  color: green;
 }

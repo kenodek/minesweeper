@@ -2,12 +2,9 @@ import React, { useState, useEffect, FormEvent } from "react";
 import "./index.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../redux/store";
-import {
-  setBoardWidth,
-  setBoardHeight,
-  setNumberOfBombs,
-  changeBoardSettings,
-} from "../../../redux/BoardSettings/creators";
+import { changeBoardSettings } from "../../../redux/BoardSettings/creators";
+import { BiReset } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
 
 interface Props {
   setIsGameReseted: Function;
@@ -33,10 +30,6 @@ const Menu = ({ setIsGameReseted }: Props) => {
 
   const [isMenuOpened, setMenuState] = useState(true);
 
-  const menuStyles = {
-    width: isMenuOpened ? "400px" : "80px",
-  };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(
@@ -45,84 +38,20 @@ const Menu = ({ setIsGameReseted }: Props) => {
   };
 
   return (
-    <div className="sidebar" style={menuStyles}>
-      <div className="container-space-between">
-        <button
-          className="hamburger"
-          onClick={() => setMenuState((prevState) => !prevState)}
-        >
-          <span className="hamburger__line"></span>
-          <span className="hamburger__line"></span>
-          <span className="hamburger__line"></span>
+    <div className="sidebar">
+      <div className="container-icon flex-center flex-wrap pd-10">
+        <button>
+          <BiReset />
         </button>
-
-        {isMenuOpened && (
-          <button
-            className="button-reset flex-center auto"
-            onClick={() => setIsGameReseted(true)}
-          >
-            Reset
-          </button>
-        )}
+        <span>Reset</span>
       </div>
 
-      {isMenuOpened && (
-        <>
-          <form className="container-space-between" onSubmit={handleSubmit}>
-            <div className="size-auto">
-              <label className="board-size-label" htmlFor="input-board-width">
-                WIDTH
-              </label>
-              <input
-                id="input-board-width"
-                type="number"
-                className="board-size-input"
-                step={1}
-                min={4}
-                max={20}
-                value={boardWidthLocal}
-                onChange={(event) =>
-                  setBoardWidthLocal(parseInt(event.target.value))
-                }
-              />
-            </div>
-
-            <div className="size-auto">
-              <label className="board-size-label">HEIGHT</label>
-              <input
-                type="number"
-                className="board-size-input"
-                step={1}
-                min={4}
-                max={20}
-                value={boardHeightLocal}
-                onChange={(event) =>
-                  setBoardHeightLocal(parseInt(event.target.value))
-                }
-              />
-            </div>
-
-            <div className="size-auto">
-              <label className="number-of-bombs-label">NUMBER OF BOMBS</label>
-              <input
-                type="number"
-                className="number-of-bombs-input"
-                step={1}
-                min={1}
-                max={boardWidthLocal * boardHeightLocal}
-                value={numberOfBombsLocal}
-                onChange={(event) =>
-                  setNumberOfBombsLocal(parseInt(event.target.value))
-                }
-              />
-            </div>
-
-            <button type="submit" id="button-submit-board-settings">
-              Submit {isFetching && "..."}
-            </button>
-          </form>
-        </>
-      )}
+      <div className="container-icon flex-center flex-wrap pd-10">
+        <button>
+          <FiSettings />
+        </button>
+        <span>Ustawienia</span>
+      </div>
     </div>
   );
 };

@@ -10,23 +10,28 @@ import { Router, Switch, Route, Link } from "react-router-dom";
 import PrivateRoute from "./global_components/PrivateRoute";
 import history from "./global_components/history";
 import Register from "./Screens/Register";
+import { IconContext } from "react-icons";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router history={history}>
-        <Switch>
-          <Route path="/" exact>
-            <Login />
-          </Route>
-          <Route path="/register" exact>
-            <Register />
-          </Route>
-          <PrivateRoute path="/game" exact>
-            <Game />
-          </PrivateRoute>
-        </Switch>
-      </Router>
+      <IconContext.Provider
+        value={{ color: "blue", className: "global-class-name", size: "2em" }}
+      >
+        <Router history={history}>
+          <Switch>
+            <Route path="/" exact>
+              <Login />
+            </Route>
+            <Route path="/register" exact>
+              <Register />
+            </Route>
+            <PrivateRoute path="/game" exact>
+              <Game />
+            </PrivateRoute>
+          </Switch>
+        </Router>
+      </IconContext.Provider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
