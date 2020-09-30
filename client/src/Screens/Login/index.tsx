@@ -12,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="container-full-screen flex-center pd-10">
+    <div className="container-full-screen dark-bg flex-center pd-10">
       <form
         className="form pd-10"
         onSubmit={(e) => {

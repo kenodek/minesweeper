@@ -27,7 +27,7 @@ const Cell = ({
   return (
     <button
       disabled={isClicked}
-      className="cell"
+      className="cell flex-center"
       style={{
         backgroundColor: isClicked
           ? CELL_BACKGROUND_COLORS.CLICKED

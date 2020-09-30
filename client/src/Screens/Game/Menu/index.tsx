@@ -7,7 +7,7 @@ import Modal from "../../../global_components/Modal";
 import GameSettings from "../GameSettings";
 
 interface Props {
-  setIsGameReseted: Function;
+  setIsGameReseted: (arg: boolean) => void;
 }
 
 const Menu = ({ setIsGameReseted }: Props) => {
@@ -21,7 +21,10 @@ const Menu = ({ setIsGameReseted }: Props) => {
 
   return (
     <div className="sidebar">
-      <div className="container-icon flex-center flex-wrap pd-10">
+      <div
+        className="container-icon flex-center flex-wrap pd-10"
+        onClick={() => setIsGameReseted(true)}
+      >
         <button>
           <BiReset />
         </button>

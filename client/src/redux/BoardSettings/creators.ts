@@ -59,6 +59,7 @@ export const changeBoardSettings = (
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log("data: ", data);
       const { width, height, numberOfBombs } = data.boardSettings;
       dispatch(setBoardWidth(width));
       dispatch(setBoardHeight(height));

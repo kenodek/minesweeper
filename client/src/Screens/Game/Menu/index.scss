@@ -2,11 +2,12 @@
 
 .sidebar {
   height: 100vh;
-  border-left: 1px solid colors.$light-gray;
   width: 90px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: #2a2e35;
+  box-shadow: -5px 0px 10px -3px rgba(0, 0, 0, 0.6);
 }
 
 .container-icon {
