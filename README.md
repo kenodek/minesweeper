@@ -1,3 +1,3 @@
 ## Welcome to Minesweeper
 
-## App is available here https://minesweepergamesaper.herokuapp.com/
+## App is available here https://saper-game.herokuapp.com/
