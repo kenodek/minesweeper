@@ -43,7 +43,7 @@ export const login = (email: string, password: string) => (
 ) => {
   dispatch(setLoginStart());
 
-  fetch("http://localhost:5000/user/login", {
+  fetch("/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -94,7 +94,7 @@ export const register = (
 ) => (dispatch: AppDispatch) => {
   dispatch(setRegisterStart());
 
-  fetch("http://localhost:5000/user/register", {
+  fetch("/user/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

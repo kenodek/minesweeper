@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user.js");
 const cors = require("cors");
+const path = require("path");
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -20,12 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/user", userRouter);
 
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
+app.use(express.static("public"));
 
+if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "public", "index.html"));
   });
 }
 
