@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.scss";
+import "../../global_styles/index.scss";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/User/creators";
 import { Link } from "react-router-dom";
@@ -8,14 +8,13 @@ import { useTypedSelector } from "../../redux/store";
 const Login = () => {
   const dispatch = useDispatch();
   const loginError = useTypedSelector((state) => state.user.loginError);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div id="container-login">
+    <div className="container-full-screen flex-center pd-10">
       <form
-        id="login-form"
+        className="form pd-10"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(login(email, password));
@@ -44,11 +43,12 @@ const Login = () => {
               className="login-input"
             />
           </label>
-          {loginError && <span id="login-error">{loginError}</span>}
+          {loginError && <span className="form-error">{loginError}</span>}
 
-          <button className="button-submit-login">Login</button>
+          <button className="auto flex-center">Login</button>
         </fieldset>
-        <Link to="/register" id="register-link">
+
+        <Link to="/register" className="form-link">
           Register here
         </Link>
       </form>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.scss";
+import "../../global_styles/index.scss";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/User/creators";
 import { Link } from "react-router-dom";
@@ -13,51 +13,45 @@ const Register = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   return (
-    <div id="container-register">
+    <div className="container-full-screen flex-center pd-10">
       <form
-        id="register-form"
+        className="form pd-10"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(register(email, password, passwordConfirmation));
         }}
       >
-        <fieldset id="register-fieldset">
-          <legend id="register-legend"> Minesweeper</legend>
-          <label className="register-label">
+        <fieldset>
+          <legend> Minesweeper</legend>
+          <label>
             Email
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="register-input"
-            />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
           </label>
 
-          <label className="register-label">
+          <label>
             Password
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              className="register-input"
             />
           </label>
 
-          <label className="register-label">
+          <label>
             Confirm password
             <input
               value={passwordConfirmation}
               onChange={(e) => setPasswordConfirmation(e.target.value)}
               type="password"
-              className="register-input"
             />
           </label>
 
-          {registerError && <span id="register-error">{registerError}</span>}
+          {registerError && <span className="form-error">{registerError}</span>}
 
-          <button className="button-submit-register">Register</button>
+          <button className="auto flex-center">Register</button>
         </fieldset>
 
-        <Link to="/" id="login-link">
+        <Link to="/" className="form-link">
           Login here
         </Link>
       </form>

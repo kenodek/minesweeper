@@ -18,7 +18,7 @@ import {
   setBoardHeight,
   setNumberOfBombs,
 } from "../BoardSettings/creators";
-import history from "../..//global/history";
+import history from "../../global_components/history";
 
 export const setLoginStart = (): SetLoginStartAction => ({
   type: SET_LOGIN_START,

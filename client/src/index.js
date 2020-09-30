@@ -7,8 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./redux/store.ts";
 import { Router, Switch, Route, Link } from "react-router-dom";
-import PrivateRoute from "./global/PrivateRoute";
-import history from "./global/history";
+import PrivateRoute from "./global_components/PrivateRoute";
+import history from "./global_components/history";
 import Register from "./Screens/Register";
 
 ReactDOM.render(

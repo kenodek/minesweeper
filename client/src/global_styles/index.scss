@@ -1,0 +1,88 @@
+@use "./colors";
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.auto {
+  width: auto;
+  height: auto;
+}
+
+.form-link {
+  margin-top: 15px;
+  margin-left: auto;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.form-error {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: crimson;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.form {
+  width: 100%;
+  height: auto;
+
+  @media screen and (min-width: 600px) {
+    width: 580px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  fieldset {
+    border: 1px dotted rgba(200, 200, 200, 0.2);
+    border-radius: 10px;
+  }
+
+  legend {
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-family: "Indie Flower", cursive;
+    color: colors.$light-green;
+  }
+
+  input {
+    width: 100%;
+    height: auto;
+    padding: 8px 3px;
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    outline: none;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgba(200, 200, 200, 1);
+  }
+
+  button {
+    padding: 8px 18px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-color: colors.$light-green;
+    color: white;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    margin-left: auto;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}
